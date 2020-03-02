@@ -1,18 +1,22 @@
 <template>
-	<div class="home">
-		<img alt="Vue logo" src="../assets/logo.png" />
-		<HelloWorld msg="Welcome to Your Vue.js App" />
+	<div>
+		<Searchbar v-model="ids" />
+		<RecipeList :ids="ids" />
 	</div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import { getAllRecipes } from "@/recipes.js";
 export default {
 	name: "Home",
 	components: {
-		HelloWorld,
+		Searchbar: () => import("@/components/Searchbar.vue"),
+		RecipeList: () => import("@/components/RecipeList.vue"),
+	},
+	data() {
+		return {
+			ids: getAllRecipes(),
+		};
 	},
 };
 </script>
