@@ -5,6 +5,7 @@
 		"node": true
 	},
 	"extends": [
+		"plugin:vue/base",
 		"eslint:recommended",
 		"plugin:prettier/recommended",
 		"prettier"
