@@ -12,7 +12,7 @@
 			height="100"
 			:src="recipe.thumbnailURL"
 		/>
-		<span>{{ recipe.id }} is yum</span>
+		<!-- <span>{{ recipe.id }} is yum</span> -->
 	</div>
 </template>
 
