@@ -1,7 +1,13 @@
 <template>
 	<div class="container">
 		<template v-for="(v, i) of ids">
-			<RecipeCard class="recipe" :key="i" :id="v" />
+			<router-link
+				:key="i"
+				class="recipe-link"
+				:to="{ name: 'Recipe', params: { id: v } }"
+			>
+				<RecipeCard class="recipe" :id="v" />
+			</router-link>
 		</template>
 	</div>
 </template>
@@ -26,5 +32,11 @@ export default Vue.extend({
 
 .recipe:nth-child(even) {
 	background-color: rgba(62, 123, 143, 0.404);
+}
+
+.recipe {
+	margin: 10px;
+	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, 0.5) 10px 10px;
 }
 </style>

@@ -1,16 +1,10 @@
 export const recipes = [
 	{
-		id: "spaghetti",
-		name: "Super Spaghet",
-	},
-	{
-		id: "meatball",
-		name: "Mean Meatballs",
-	},
-	{
 		id: "salad",
 		name: "Greek Salad",
 		author: "Kay Eulmery",
+		thumbnailURL:
+			"https://www.olivetomato.com/wp-content/uploads/2019/06/Best-Greek-Salad-Recipe.jpg",
 		tags: ["salad", "summer", "cucumber"],
 		time: "15 minutes",
 		serves: "6-8",

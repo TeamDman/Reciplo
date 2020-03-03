@@ -3,9 +3,7 @@
 		Recipe error.
 	</div>
 	<div v-else class="recipe-card">
-		<router-link class="recipe-link" :to="{ name: 'Recipe', params: { id } }"
-			><h1>{{ recipe.name }}</h1></router-link
-		>
+		<h1>{{ recipe.name }}</h1>
 		<img
 			v-if="recipe.thumbnailURL"
 			width="100"
