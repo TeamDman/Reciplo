@@ -6,6 +6,12 @@
 		<router-link class="recipe-link" :to="{ name: 'Recipe', params: { id } }"
 			><h1>{{ recipe.name }}</h1></router-link
 		>
+		<img
+			v-if="recipe.thumbnailURL"
+			width="100"
+			height="100"
+			:src="recipe.thumbnailURL"
+		/>
 		<span>{{ recipe.id }} is yum</span>
 	</div>
 </template>
