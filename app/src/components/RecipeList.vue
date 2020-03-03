@@ -21,9 +21,10 @@ export default Vue.extend({
 .container {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 }
 
 .recipe:nth-child(even) {
-	background-color: gray;
+	background-color: rgba(62, 123, 143, 0.404);
 }
 </style>
