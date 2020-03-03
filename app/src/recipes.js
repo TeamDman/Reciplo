@@ -40,7 +40,7 @@ export const recipes = [
 		thumbnailURL:
 			"https://149366112.v2.pressablecdn.com/wp-content/uploads/2017/03/kimchi-pancake.jpg",
 		tags: ["kimchi", "healthy", "easy"],
-		cookTime: "15 minutes",
+		time: "15 minutes",
 		serves: "1-2 people",
 		ingredients: [
 			"150g kimchi",
@@ -64,7 +64,7 @@ export const recipes = [
 		thumbnailURL:
 			"https://images-gmi-pmc.edge-generalmills.com/087d17eb-500e-4b26-abd1-4f9ffa96a2c6.jpg",
 		tags: ["dessert", "cookies", "sweet", "chocolate"],
-		cookTime: "25 minutes",
+		time: "25 minutes",
 		serves: "9 people",
 		ingredients: [
 			"3 to 4 cups of mix of milk and semi-sweet chocolate chips",
