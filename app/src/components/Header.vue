@@ -22,6 +22,6 @@
 }
 
 #title {
-	font: 32px Jokerman;
+	font-size: 32px;
 }
 </style>

@@ -28,6 +28,9 @@ export default Vue.extend({
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	text-align: center;
+	padding-left: 5%;
+	padding-right: 5%;
 }
 
 .recipe:nth-child(even) {
@@ -36,7 +39,8 @@ export default Vue.extend({
 
 .recipe {
 	margin: 10px;
-	border-radius: 10px;
-	box-shadow: rgba(0, 0, 0, 0.5) 10px 10px;
+	padding: 10px 5px;
+	border-radius: 15px;
+	box-shadow: rgba(78, 78, 78, 0.5) 3px 3px 10px;
 }
 </style>

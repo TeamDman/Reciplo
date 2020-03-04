@@ -1,5 +1,7 @@
 <template>
-	<div>Search <input v-model="query" /></div>
+	<div class="search-container">
+		<input v-model="query" class="search-bar" placeholder="Search" />
+	</div>
 </template>
 
 <script>
@@ -20,3 +22,14 @@ export default Vue.extend({
 	},
 });
 </script>
+
+<style scoped>
+.search-container {
+	text-align: center;
+	padding: 10%;
+}
+.search-bar {
+	width: 60%;
+	font-size: 25px;
+}
+</style>

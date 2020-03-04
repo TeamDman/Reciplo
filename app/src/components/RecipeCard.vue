@@ -3,11 +3,11 @@
 		Recipe error.
 	</div>
 	<div v-else class="recipe-card">
-		<h1>{{ recipe.name }}</h1>
+		<h2>{{ recipe.name }}</h2>
 		<img
 			v-if="recipe.thumbnailURL"
-			width="100"
-			height="100"
+			width="100%"
+			height="auto"
 			:src="recipe.thumbnailURL"
 		/>
 		<!-- <span>{{ recipe.id }} is yum</span> -->

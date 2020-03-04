@@ -7,15 +7,22 @@
 			<h1>{{ recipe.name }}</h1>
 			<em>by {{ recipe.author }}</em>
 			<br />
-			<strong>Prep time:</strong>{{ recipe.time }}
+			<strong>Prep time: </strong>{{ recipe.time }}
 			<br />
-			<strong>Serves:</strong>{{ recipe.serves }}
+			<strong>Serves: </strong>{{ recipe.serves }}
 		</div>
 		<div>
-			<h2>Tags</h2>
-			<div v-for="(v, i) of recipe.tags" :key="i" class="recipe-tag">
-				{{ v }}
-			</div>
+			<h2>Ingredients</h2>
+			<ol style="padding-left: 0;">
+				<template v-for="v of recipe.ingredients">
+					<ul class="recipe-ingredient">
+						-
+						{{
+							v
+						}}
+					</ul>
+				</template>
+			</ol>
 		</div>
 		<div>
 			<h2>Instructions</h2>
@@ -72,6 +79,9 @@ export default Vue.extend({
 }
 .recipe-instruction {
 	cursor: pointer;
+}
+.recipe-ingredient {
+	padding-left: 0;
 }
 .recipe-tag {
 	background-color: gray;

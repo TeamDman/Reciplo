@@ -4,8 +4,8 @@ export const recipes = [
 		name: "Greek Salad",
 		author: "Kay Eulmery",
 		thumbnailURL:
-			"https://www.olivetomato.com/wp-content/uploads/2019/06/Best-Greek-Salad-Recipe.jpg",
-		tags: ["salad", "summer", "cucumber"],
+			"https://food.fnr.sndimg.com/content/dam/images/food/fullset/2013/10/7/0/FNK_Greek-Salad_s4x3.jpg.rend.hgtvcom.826.620.suffix/1383814482359.jpeg",
+		tags: ["salad", "summer", "cucumber", "greek"],
 		time: "15 minutes",
 		serves: "6-8",
 		ingredients: [
@@ -94,7 +94,90 @@ export const recipes = [
 		author: "Magnolia Lalu",
 		thumbnailURL:
 			"https://scm-assets.constant.co/scm/unilever/e9dc924f238fa6cc29465942875fe8f0/80f0c6f9-18a9-4faa-b8a3-777a76b16acf.jpg",
-		tags: ["lunch", "sandwich"],
+		tags: ["lunch", "sandwich", "blt", "easy"],
+		time: "20 minutes",
+		serves: "1 person",
+		ingredients: [
+			"50g Chicken breast",
+			"5 slices of bacons",
+			"3 leaves of iceberg lettuce",
+			"2 slices of tomatoes",
+			"2 slices of bread",
+			"Pepper",
+			"Salt",
+			"Approx. 500ml of water",
+			"1 tablespoon of olive oil",
+			"2 tablespoons of mayonnaise",
+			"½ tablespoons of dill pickle relish",
+		],
+		instructions: [
+			"Boil 500ml of water to cook the chicken on high heat",
+			"When the water boils, put the chicken breast for 10 minutes or until it is firm, when poked with a chopstick or a knife",
+			"Rinse the chicken with cold water",
+			"Add a tablespoon of olive oil",
+			"Cook the chicken and season with salt and pepper",
+			"Cook the bacon",
+			"Toast the bread slices",
+			"Spread mayonnaise and dill pickle relish on one side of each bread",
+			"Place the lettuce, tomatoes, chicken, bacons, and finally the second bread slice",
+		],
+	},
+	{
+		id: "chili",
+		name: "The Best Classic Chili",
+		author: "Amanda Finks",
+		thumbnailURL:
+			"https://www.thewholesomedish.com/wp-content/uploads/2018/05/The-Best-Classic-Chili-4.jpg",
+		tags: ["chili", "beef", "tomatoes", "dinner", "easy"],
+		time: "30 minutes",
+		serves: "6 people",
+		ingredients: [
+			"1 tablespoon olive oil",
+			"1 medium yellow onion -diced",
+			"1 pound 90% lean ground beef",
+			"2 1/2 tablespoons chili powder",
+			"2 tablespoons ground cumin",
+			"2 tablespoons granulated sugar",
+			"2 tablespoons tomato paste",
+			"1 tablespoon garlic powder",
+			"1 1/2 teaspoons salt",
+			"1/2 teaspoon ground black pepper",
+			"1 1/2 cups beef broth",
+			"15 oz. of can petite diced tomatoes",
+			"16 oz. of can red kidney beans, drained and rinsed",
+			"8 oz. of can tomato sauce",
+			"(Optional) 1/4 teaspoon ground cayenne pepper*",
+		],
+		instructions: [
+			"Add the olive oil to a large soup pot and place it over medium-high heat for two minutes. Add the onion. Cook for 5 minutes, stirring occasionally.",
+			"Add the ground beef to the pot. Break it apart with a wooden spoon. Cook for 6-7 minutes, until the beef is browned, stirring occasionally.",
+			"Add the chili powder, cumin, sugar, tomato paste, garlic powder, salt, pepper, and optional cayenne. Stir until well combined. ",
+			"Add the broth, diced tomatoes (with their juice), drained beans, and tomato sauce. Stir well.",
+			"Bring the liquid to a low boil. Then, reduce the heat (low to medium-low) to gently simmer the chili, uncovered, for 20-25 minutes, stirring occasionally.",
+			"Remove the pot from the heat. Let the chili rest for 5-10 minutes before serving.",
+		],
+	},
+	{
+		id: "smoothie",
+		name: "Blueberry & Raspberry Smoothies",
+		author: "George Smoth",
+		thumbnailURL:
+			"https://lh4.googleusercontent.com/sler3vgByXAQG6h-2FDPrTB8SbhQSURd2TFkrptI1SWTpCdroHOdaza0c3XjgPCQPH-RjoZ1ROVprru0uFlbzLJ42uRBERPFauUmrUWSMPjZAWET-dIdnBB_8n-zObxQAsTJq9Ik",
+		tags: ["healthy", "dairy", "berry", "smoothie", "breakfast", "easy"],
+		time: "5 minutes",
+		serves: "2 people",
+		ingredients: [
+			"1 cup of fresh blueberries",
+			"¼ cups of fresh raspberry",
+			"1 cup of milk",
+			"½ cups of plain yogurt",
+			"1 tablespoon of honey ",
+		],
+		instructions: [
+			"Wash blueberries and raspberry",
+			"Place blueberries, raspberry, milk, yogurt, and honey in a blender. ",
+			"Blend them until well mixed. ",
+		],
 	},
 ];
 
@@ -111,7 +194,16 @@ export function searchRecipes(query) {
 		.filter(x => {
 			if (x.id.match(query)) return true;
 			if (x.name.match(query)) return true;
+			if (x.name.toLowerCase().match(query)) return true;
+			if (matchInArray(x.tags, query)) return true;
 			return false;
 		})
 		.map(x => x.id);
+}
+
+function matchInArray(array, query) {
+	for (let i = 0; i < array.length; i++) {
+		if (array[i].match(query)) return true;
+	}
+	return false;
 }
