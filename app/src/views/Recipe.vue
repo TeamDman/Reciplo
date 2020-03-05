@@ -48,7 +48,9 @@
 			@read-instruction="readInstruction"
 			@next="readNext"
 			@previous="readPrevious"
+			@timer="addTimer"
 		/>
+		<Timers ref="timers" />
 	</main>
 </template>
 
@@ -61,6 +63,7 @@ export default Vue.extend({
 	components: {
 		Sidebar: () => import("@/components/Sidebar.vue"),
 		Controls: () => import("@/components/Controls.vue"),
+		Timers: () => import("@/components/Timers.vue"),
 	},
 	data() {
 		return {
@@ -97,6 +100,9 @@ export default Vue.extend({
 			if (this.activeInstruction == 0)
 				return this.read("no previous instructions");
 			this.onInstructionClick(this.activeInstruction - 1);
+		},
+		addTimer(time) {
+			this.$refs.timers.addTimer(time);
 		},
 	},
 });

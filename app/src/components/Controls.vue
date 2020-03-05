@@ -54,7 +54,7 @@ export default Vue.extend({
 			window.speechSynthesis.speak(new SpeechSynthesisUtterance(text));
 		},
 		parse(vocals) {
-			if (this.lastInstruction + 1000 > Date.now()) return;
+			if (this.lastInstruction + 2000 > Date.now()) return;
 			this.lastInstruction = Date.now();
 			vocals = vocals.toLowerCase();
 			console.log("heard", vocals);
@@ -62,6 +62,9 @@ export default Vue.extend({
 			if (vocals.match("instruction")) return this.$emit("read-instruction");
 			if (vocals.match("next")) return this.$emit("next");
 			if (vocals.match("previous")) return this.$emit("previous");
+			if (vocals.match(/timer?\s*\d+/))
+				return this.$emit("timer", vocals.match(/\d+/));
+			this.lastInstruction = 0;
 		},
 		record() {
 			this.recog.start();
