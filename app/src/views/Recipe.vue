@@ -15,8 +15,8 @@
 			<div>
 				<h2>Ingredients</h2>
 				<ol style="padding-left: 0;">
-					<template v-for="v of recipe.ingredients">
-						<ul class="recipe-ingredient">
+					<template v-for="(v, i) of recipe.ingredients">
+						<ul class="recipe-ingredient" :key="i">
 							-
 							{{
 								v
