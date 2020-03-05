@@ -27,7 +27,7 @@ export default Vue.extend({
 	methods: {
 		addTimer(endTime) {
 			if (isNaN(endTime)) return;
-			this.timers.push(parseInt(endTime));
+			this.timers.push(parseInt(endTime) * 60);
 		},
 		beep() {
 			// console.log("fick", this.timers);
