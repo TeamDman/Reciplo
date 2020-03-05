@@ -190,20 +190,13 @@ export function getAllRecipes() {
 }
 
 export function searchRecipes(query) {
+	query = query.toLowerCase();
 	return recipes
 		.filter(x => {
-			if (x.id.match(query)) return true;
-			if (x.name.match(query)) return true;
+			if (x.id.toLowerCase().match(query)) return true;
 			if (x.name.toLowerCase().match(query)) return true;
-			if (matchInArray(x.tags, query)) return true;
+			if (x.tags.some(x => x.toLowerCase().match(query))) return true;
 			return false;
 		})
 		.map(x => x.id);
-}
-
-function matchInArray(array, query) {
-	for (let i = 0; i < array.length; i++) {
-		if (array[i].match(query)) return true;
-	}
-	return false;
 }
