@@ -1,8 +1,11 @@
 <template>
 	<div id="nav">
-		<div id="title">Reciplo</div>
-		<router-link class="nav-link" to="/">Home</router-link>|
-		<router-link class="nav-link" to="/about">About</router-link>
+		<router-link class="nav-link" to="/"
+			><div id="title">Reciplo</div></router-link
+		>
+		<router-link class="nav-link" to="/">Home</router-link>
+		<!-- | -->
+		<!-- <router-link class="nav-link" to="/about">About</router-link> -->
 	</div>
 </template>
 
