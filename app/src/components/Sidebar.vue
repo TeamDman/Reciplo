@@ -9,11 +9,11 @@
 			</div>
 			<template v-if="!isCollapsed">
 				<h2>Voice Commands</h2>
-				<h4>Read Ingredients</h4>
+				<h4>Ingredients</h4>
 				<ul>
 					<li>reads all the ingredients</li>
 				</ul>
-				<h4>Read Instruction</h4>
+				<h4>Instruction</h4>
 				<ul>
 					<li>reads the current instruction</li>
 				</ul>
@@ -21,12 +21,16 @@
 				<ul>
 					<li>reads the next instruction</li>
 				</ul>
-				<h4>Repeat</h4>
+				<h4>Previous</h4>
+				<ul>
+					<li>reads the previous instruction</li>
+				</ul>
+				<!-- <h4>Repeat</h4>
 				<ul>
 					<li>
 						repeats the current instruction or the list of ingredients
 					</li>
-				</ul>
+				</ul> -->
 				<h4>Set a timer for &lt;time&gt;</h4>
 				<ul>
 					<li>starts a timer for the requested amount of time</li>

@@ -42,6 +42,13 @@
 			</div>
 		</div>
 		<Sidebar />
+		<Controls
+			ref="controls"
+			@read-ingredients="readIngredients"
+			@read-instruction="readInstruction"
+			@next="readNext"
+			@previous="readPrevious"
+		/>
 	</main>
 </template>
 
@@ -53,6 +60,7 @@ export default Vue.extend({
 	name: "app-recipe-details",
 	components: {
 		Sidebar: () => import("@/components/Sidebar.vue"),
+		Controls: () => import("@/components/Controls.vue"),
 	},
 	data() {
 		return {
@@ -68,11 +76,27 @@ export default Vue.extend({
 	methods: {
 		onInstructionClick(index) {
 			this.activeInstruction = index;
-			this.read(this.recipe.instructions[index]);
+			this.readInstruction();
 		},
 		read(text) {
-			const msg = new SpeechSynthesisUtterance(text);
-			window.speechSynthesis.speak(msg);
+			this.$refs.controls.read(text);
+		},
+		readIngredients() {
+			this.read("ingredients:");
+			this.recipe.ingredients.forEach(this.read);
+		},
+		readInstruction() {
+			this.read(this.recipe.instructions[this.activeInstruction]);
+		},
+		readNext() {
+			if (this.activeInstruction == this.recipe.instructions.length - 1)
+				return this.read("no further instructions");
+			this.onInstructionClick(this.activeInstruction + 1);
+		},
+		readPrevious() {
+			if (this.activeInstruction == 0)
+				return this.read("no previous instructions");
+			this.onInstructionClick(this.activeInstruction - 1);
 		},
 	},
 });
