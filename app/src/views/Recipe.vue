@@ -41,7 +41,7 @@
 				</ol>
 			</div>
 		</div>
-		<CommandList />
+		<Sidebar />
 	</main>
 </template>
 
@@ -52,7 +52,7 @@ import { getRecipe } from "@/recipes.js";
 export default Vue.extend({
 	name: "app-recipe-details",
 	components: {
-		CommandList: () => import("@/components/CommandList.vue"),
+		Sidebar: () => import("@/components/Sidebar.vue"),
 	},
 	data() {
 		return {
