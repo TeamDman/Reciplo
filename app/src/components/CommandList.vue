@@ -1,28 +1,37 @@
 <template>
 	<div class="container">
-		<div id="commands" v-bind:class="{ collapsed: isCollapsed == true }">
-			<img
-				v-bind:class="{ 'arrow-icon': true, reversed: isCollapsed == true }"
-				class="arrow-icon"
-				src="https://cdn1.iconfinder.com/data/icons/general-ui-outlined-thick/24/chevron-right-512.png"
-				@click="toggleCollapse"
-			/>
-			<h2 v-if="isCollapsed == false">Voice Commands</h2>
-			<h4 v-if="isCollapsed == false">Read Ingredients</h4>
-			<p v-if="isCollapsed == false">- reads all the ingredients</p>
-			<h4 v-if="isCollapsed == false">Read Instruction</h4>
-			<p v-if="isCollapsed == false">- reads the current instruction</p>
-			<h4 v-if="isCollapsed == false">Next</h4>
-			<p v-if="isCollapsed == false">- reads the next instruction</p>
-			<h4 v-if="isCollapsed == false">Repeat</h4>
-			<p v-if="isCollapsed == false">
-				- repeats the current instruction or the list of ingredients
-			</p>
-			<h4 v-if="isCollapsed == false">Set a timer for _</h4>
-			<p v-if="isCollapsed == false">
-				- starts a timer for the requested amount of time
-			</p>
-			<br />
+		<div id="commands" v-bind:class="{ collapsed: isCollapsed }">
+			<div v-show="!isCollapsed" class="arrow-icon" @click="toggleCollapse">
+				&rsaquo;
+			</div>
+			<div v-show="isCollapsed" class="arrow-icon" @click="toggleCollapse">
+				&lsaquo;
+			</div>
+			<template v-if="!isCollapsed">
+				<h2>Voice Commands</h2>
+				<h4>Read Ingredients</h4>
+				<ul>
+					<li>reads all the ingredients</li>
+				</ul>
+				<h4>Read Instruction</h4>
+				<ul>
+					<li>reads the current instruction</li>
+				</ul>
+				<h4>Next</h4>
+				<ul>
+					<li>reads the next instruction</li>
+				</ul>
+				<h4>Repeat</h4>
+				<ul>
+					<li>
+						repeats the current instruction or the list of ingredients
+					</li>
+				</ul>
+				<h4>Set a timer for &lt;time&gt;</h4>
+				<ul>
+					<li>starts a timer for the requested amount of time</li>
+				</ul>
+			</template>
 		</div>
 	</div>
 </template>
@@ -38,19 +47,20 @@ export default Vue.extend({
 	},
 	methods: {
 		toggleCollapse() {
-			this.isCollapsed = !this.isCollapsed;
+			this.isCollapsed ^= 1;
 		},
 	},
 });
 </script>
 
-<style>
+<style scoped>
 #commands {
 	background-color: rgba(20, 50, 250, 0.7);
 	color: white;
-	border-radius: 10% 0 0 10%;
+	border-radius: 30px 0 0 30px;
 	height: 100%;
 	padding-left: 5%;
+	overflow: auto;
 }
 .container {
 	float: right;
@@ -64,8 +74,29 @@ export default Vue.extend({
 .arrow-icon {
 	width: 20%;
 	cursor: pointer;
+	font-size: 64px;
+	display: inline-block;
+	text-align: center;
+	display: block;
+	height: 55px;
+	line-height: 55px;
+	transform: translateY(-5px);
 }
-.reversed {
-	transform: rotate(180deg);
+ul {
+	list-style: none;
+	margin-left: 5px;
+	padding: 0;
+}
+ul li::before {
+	color: "white";
+	content: "-";
+	display: inline-block;
+	padding-right: 5px;
+}
+h4::before {
+	content: "“";
+}
+h4::after {
+	content: "”";
 }
 </style>
