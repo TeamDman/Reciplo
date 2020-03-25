@@ -126,7 +126,7 @@ export const recipes = [
 		name: "The Best Classic Chili",
 		author: "Bethany Loarth",
 		thumbnailURL:
-			"https://cdn.pixabay.com/photo/2014/06/28/14/14/chili-con-carne-378952_960_720.jpg",
+			"https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/2/1/0/WU0202_chili_s3x4.jpg.rend.hgtvcom.826.620.suffix/1486076474733.jpeg",
 		tags: ["chili", "beef", "tomatoes", "dinner", "easy"],
 		time: "30 minutes",
 		serves: "4 people",
@@ -180,7 +180,7 @@ export const recipes = [
 		name: "Avocado and Egg Breakfast Toast",
 		author: "Hannah Mills",
 		thumbnailURL:
-			"https://cdn.pixabay.com/photo/2016/11/13/19/24/avocado-1821778_1280.jpg",
+			"https://food.fnr.sndimg.com/content/dam/images/food/fullset/2017/1/9/4/YW0909H_avocado-toast-with-egg-scramble_s4x3.jpg.rend.hgtvcom.826.620.suffix/1484024438211.jpeg",
 		tags: ["healthy", "egg", "avocado", "breakfast", "easy"],
 		time: "10 minutes",
 		serves: "2 people",
@@ -208,7 +208,7 @@ export const recipes = [
 		name: "Strawberry and Cream Croissant",
 		author: "Judith Eol",
 		thumbnailURL:
-			"https://cdn.pixabay.com/photo/2019/03/24/14/25/croissants-4077817_1280.jpg",
+			"https://images.unsplash.com/photo-1462350036576-0394189dbe9e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
 		tags: ["strawberry", "sweet", "dessert"],
 		time: "20 minutes",
 		serves: "6 people",
@@ -233,7 +233,7 @@ export const recipes = [
 		name: "Kimchi Fried Rice",
 		author: "Eric Cho",
 		thumbnailURL:
-			"https://cdn.pixabay.com/photo/2014/01/09/10/14/kimchi-fried-rice-241051_1280.jpg",
+			"https://food.fnr.sndimg.com/content/dam/images/food/fullset/2018/11/12/0/DV2906_Kimichi-Bacon-Fried-Rice-with-Beef-Cheeks_s4x3.jpg.rend.hgtvcom.826.620.suffix/1542050801078.jpeg",
 		tags: ["rice", "kimchi", "lunch", "spicy"],
 		time: "20 minutes",
 		serves: "2 people",
@@ -261,7 +261,7 @@ export const recipes = [
 		name: "Shrimp Spaghetti",
 		author: "Tom Zak",
 		thumbnailURL:
-			"https://cdn.pixabay.com/photo/2015/03/05/18/30/spaghetti-660748_1280.jpg",
+			"https://food.fnr.sndimg.com/content/dam/images/food/fullset/2017/1/18/0/FNM030117_Lemon-Spaghetti-with-Shrimp_s4x3.jpg.rend.hgtvcom.826.620.suffix/1484758942379.jpeg",
 		tags: ["dinner", "easy", "shrimp"],
 		time: "20 minutes",
 		serves: "2 people",
@@ -287,7 +287,7 @@ export const recipes = [
 		name: "Whipped Coffee Creme Latte",
 		author: "Rachel Pollos",
 		thumbnailURL:
-			"https://cdn.pixabay.com/photo/2017/08/07/20/02/still-2607270_1280.jpg",
+			"https://food.fnr.sndimg.com/content/dam/images/food/fullset/2016/12/17/3/YW0908H_mexican-iced-coffee-with-almond-milk_s4x3.jpg.rend.hgtvcom.826.620.suffix/1482008568992.jpeg",
 		tags: ["cold", "easy", "dessert", "coffee", "sweet"],
 		time: "5 minutes",
 		serves: "2 people",
