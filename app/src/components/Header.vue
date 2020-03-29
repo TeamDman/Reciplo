@@ -10,12 +10,14 @@
 </template>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap");
 #nav {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	background-color: purple;
+	background-color: rgb(66, 66, 66);
 	padding: 10px;
+	font-family: "Baloo Thambi 2", cursive;
 }
 
 .nav-link {

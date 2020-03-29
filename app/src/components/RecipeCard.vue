@@ -10,7 +10,6 @@
 			height="auto"
 			:src="recipe.thumbnailURL"
 		/>
-		<!-- <span>{{ recipe.id }} is yum</span> -->
 	</div>
 </template>
 
@@ -32,9 +31,20 @@ export default Vue.extend({
 <style scoped>
 .recipe-card {
 	width: 300px;
+	color: black;
+	text-decoration: none;
+	margin: 10px;
+	padding: 10px 5px;
+	border-radius: 15px;
+	box-shadow: rgba(78, 78, 78, 0.5) 3px 3px 10px;
+}
+.recipe-card:hover {
+	color: red;
+	box-shadow: rgba(17, 17, 17, 0.664) 3px 3px 15px;
+	transition: color 0.3s, box-shadow 0.3s;
 }
 .recipe-link {
-	text-decoration: none;
 	color: black;
+	text-decoration: none;
 }
 </style>

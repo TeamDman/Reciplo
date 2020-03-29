@@ -250,10 +250,10 @@ export const recipes = [
 		instructions: [
 			"Preheat a medium sized pan on medium heat. ",
 			"Add butter. Once it melts, add the chopped kimchi and sesame oil ,and stir. ",
-			"Cut the bacon into small bite size pieces and add them to the pan. Stir with the kimchi. ", 
+			"Cut the bacon into small bite size pieces and add them to the pan. Stir with the kimchi. ",
 			"Add the rice and mix everything throughly. If needed, add some kimchi juice. ",
 			"Using a nonstick skillet, make fried eggs. ",
-			"Serve the kimchi fried rice with the fried eggs and chopped scallion on top. ", 
+			"Serve the kimchi fried rice with the fried eggs and chopped scallion on top. ",
 		],
 	},
 	{
@@ -278,7 +278,7 @@ export const recipes = [
 			"Heat a medium sized pan on medium heat. ",
 			"Add the oil and garlic, and stir them. ",
 			"Add shrimps and cook for 2 minutes. ",
-			"Add the drained spaghetti. ", 
+			"Add the drained spaghetti. ",
 			"Mix the chili flakes with the pasta. ",
 		],
 	},
@@ -304,7 +304,6 @@ export const recipes = [
 			"Serve it with a dollop of whipped coffee cream. ",
 		],
 	},
-
 ];
 
 export function getRecipe(id) {

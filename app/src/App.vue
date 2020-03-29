@@ -16,10 +16,11 @@ export default Vue.extend({
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans&display=swap");
 html,
 body {
 	padding: 0;
 	margin: 0;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: "Noto Sans", sans-serif;
 }
 </style>

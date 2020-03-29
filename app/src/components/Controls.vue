@@ -75,12 +75,12 @@ export default Vue.extend({
 
 <style scoped>
 #container {
-	position: absolute;
+	position: fixed;
 	bottom: 0px;
 	width: 400px;
 	left: 50%;
 	transform: translateX(-50%);
-	background-color: #4caf50; /* Green */
+	background-color: rgb(255, 44, 44);
 }
 .btn {
 	background-color: transparent;

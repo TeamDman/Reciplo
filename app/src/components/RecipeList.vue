@@ -6,7 +6,7 @@
 				class="recipe-link"
 				:to="{ name: 'Recipe', params: { id: v } }"
 			>
-				<RecipeCard class="recipe" :id="v" />
+				<RecipeCard :id="v" />
 			</router-link>
 		</template>
 	</div>
@@ -32,15 +32,7 @@ export default Vue.extend({
 	padding-left: 5%;
 	padding-right: 5%;
 }
-
-.recipe:nth-child(even) {
-	background-color: rgba(62, 123, 143, 0.404);
-}
-
-.recipe {
-	margin: 10px;
-	padding: 10px 5px;
-	border-radius: 15px;
-	box-shadow: rgba(78, 78, 78, 0.5) 3px 3px 10px;
+a {
+	text-decoration: none;
 }
 </style>

@@ -59,15 +59,17 @@ export default Vue.extend({
 
 <style scoped>
 #commands {
-	background-color: rgba(20, 50, 250, 0.7);
-	color: white;
-	border-radius: 30px 0 0 30px;
+	background-color: rgb(255, 44, 44);
 	height: 100%;
 	padding-left: 5%;
 	overflow: auto;
+	border-radius: 30px 0 0 30px;
+	box-shadow: rgba(78, 78, 78, 0.7) -1px 0px 7px;
+	color: white;
 }
 .container {
-	float: right;
+	position: fixed;
+	right: 0;
 	margin-top: 3%;
 	width: 20%;
 }

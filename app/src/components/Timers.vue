@@ -9,7 +9,14 @@
 			ref="alarm"
 			enablejavascript="true"
 		/> -->
-		<div v-for="(time, i) of timers" :key="i">{{ time }}s</div>
+		<div v-for="(time, i) of timers" :key="i">
+			<div v-if="time % 60 > 9">
+				{{ String(Math.floor(time / 60)) + ":" + String(time % 60) }}
+			</div>
+			<div v-else>
+				{{ String(Math.floor(time / 60)) + ":0" + String(time % 60) }}
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -50,10 +57,13 @@ export default Vue.extend({
 
 <style scoped>
 #container {
-	position: absolute;
+	position: fixed;
 	bottom: 0px;
-	right: 0px;
-	width: 400px;
-	background-color: #4caf50; /* Green */
+	left: 0px;
+	width: 20%;
+	text-align: center;
+	font-size: 24px;
+	color: white;
+	background-color: rgb(66, 66, 66);
 }
 </style>
