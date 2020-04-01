@@ -92,6 +92,7 @@ export default Vue.extend({
 			this.recipe.ingredients.forEach(this.read);
 		},
 		readInstruction() {
+			this.read("step " + this.activeInstruction + ":");
 			this.read(this.recipe.instructions[this.activeInstruction]);
 		},
 		readNext() {
