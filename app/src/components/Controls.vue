@@ -62,7 +62,10 @@ export default Vue.extend({
 			if (vocals.match("instruction")) return this.$emit("read-instruction");
 			if (vocals.match("next")) return this.$emit("next");
 			if (vocals.match("previous")) return this.$emit("previous");
-			if (vocals.match(/timer?\s*\d+/))
+			if (vocals.match("pause")) return this.pause();
+			if (vocals.match("stop")) return this.stop();
+			if (vocals.match("resume") || vocals.match("play")) return this.resume();
+			if (vocals.match(/timer?.*\d+/))
 				return this.$emit("timer", vocals.match(/\d+/));
 			this.lastInstruction = 0;
 		},
