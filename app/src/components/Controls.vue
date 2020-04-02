@@ -49,15 +49,36 @@ export default Vue.extend({
 			window.speechSynthesis.cancel();
 		},
 		read(text) {
-			// this.stop();
-			// this.resume();
+			this.stop();
+			this.resume();
 			window.speechSynthesis.speak(new SpeechSynthesisUtterance(text));
 		},
 		parse(vocals) {
 			if (this.lastInstruction + 2000 > Date.now()) return;
 			this.lastInstruction = Date.now();
 			vocals = vocals.toLowerCase();
+			const nums = [
+				"zero",
+				"one",
+				"two",
+				"three",
+				"four",
+				"five",
+				"six",
+				"seven",
+				"eight",
+				"nine",
+				"ten",
+			];
+			for (let i = 0; i < nums.length; i++) vocals = vocals.replace(nums[i], i);
+			vocals = vocals.replace(/\bto\b/, "2");
+			vocals = vocals.replace(/\bfor\b/, "4");
 			console.log("heard", vocals);
+			if (vocals.match(/read.*\d+/))
+				return this.$emit(
+					"read-instruction-index",
+					parseInt(vocals.match(/\d+/)) - 1,
+				);
 			if (vocals.match("ingredient")) return this.$emit("read-ingredients");
 			if (vocals.match("instruction")) return this.$emit("read-instruction");
 			if (vocals.match("next")) return this.$emit("next");

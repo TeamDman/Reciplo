@@ -49,6 +49,7 @@
 			ref="controls"
 			@read-ingredients="readIngredients"
 			@read-instruction="readInstruction"
+			@read-instruction-index="onInstructionClick"
 			@next="readNext"
 			@previous="readPrevious"
 			@timer="addTimer"
@@ -92,7 +93,7 @@ export default Vue.extend({
 			this.recipe.ingredients.forEach(this.read);
 		},
 		readInstruction() {
-			this.read("step " + this.activeInstruction + ":");
+			this.read("step " + (parseInt(this.activeInstruction) + 1) + ":");
 			this.read(this.recipe.instructions[this.activeInstruction]);
 		},
 		readNext() {
