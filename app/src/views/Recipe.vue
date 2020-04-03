@@ -90,7 +90,7 @@ export default Vue.extend({
 		},
 		readIngredients() {
 			this.read("ingredients:");
-			this.recipe.ingredients.forEach(this.read);
+			this.read(this.recipe.ingredients.join(".\n"));
 		},
 		readInstruction() {
 			this.read("step " + (parseInt(this.activeInstruction) + 1) + ":");

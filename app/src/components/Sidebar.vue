@@ -17,6 +17,10 @@
 				<ul>
 					<li>reads the current instruction</li>
 				</ul>
+				<h4>read &lt;#&gt;</h4>
+				<ul>
+					<li>reads the given instruction</li>
+				</ul>
 				<h4>Next</h4>
 				<ul>
 					<li>reads the next instruction</li>
@@ -25,6 +29,15 @@
 				<ul>
 					<li>reads the previous instruction</li>
 				</ul>
+				<h4>pause</h4>
+				<ul>
+					<li>pauses the current text-to-speech</li>
+				</ul>
+				<h4>play/resume</h4>
+				<ul>
+					<li>resumes the current text-to-speech</li>
+				</ul>
+
 				<!-- <h4>Repeat</h4>
 				<ul>
 					<li>
@@ -104,5 +117,10 @@ h4::before {
 }
 h4::after {
 	content: "”";
+}
+h4,
+ul {
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 </style>
